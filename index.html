@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Next-Gen AI Avatars - Investment Opportunity</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f7fa;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            text-align: center;
+        }
+        .container {
+            max-width: 800px;
+            padding: 40px;
+            background-color: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        .logo {
+            max-width: 200px;
+            margin-bottom: 30px;
+        }
+        h1 {
+            color: #2c3e50;
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+        p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin-bottom: 30px;
+            color: #555;
+        }
+        .language-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 40px;
+        }
+        .language-btn {
+            padding: 15px 30px;
+            font-size: 1.1rem;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .russian-btn {
+            background-color: #1e88e5;
+            color: white;
+        }
+        .english-btn {
+            background-color: #43a047;
+            color: white;
+        }
+        .language-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        .language-btn:active {
+            transform: translateY(1px);
+        }
+        .flag-icon {
+            width: 24px;
+            height: 24px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="logo.png" alt="Gagarin Data Labs" class="logo">
+        
+        <h1>Next-Gen AI Avatars</h1>
+        <p>Revolutionary AI avatar technology combining social impact with high commercial potential and unique competitive advantages over market leaders.</p>
+        <p>Discover groundbreaking AI avatar technology and investment opportunity in your preferred language:</p>
+        
+        <div class="language-buttons">
+            <button class="language-btn russian-btn" onclick="window.location.href='russian.html'">
+                <img src="ru.png" alt="Russian" class="flag-icon">
+                Русская версия
+            </button>
+            <button class="language-btn english-btn" onclick="window.location.href='english.html'">
+                <img src="gb.png" alt="English" class="flag-icon">
+                English Version
+            </button>
+        </div>
+    </div>
+
+    <script>
+        // Можно добавить функционал для запоминания выбора языка
+        document.querySelector('.russian-btn').addEventListener('click', function() {
+            localStorage.setItem('preferredLanguage', 'ru');
+        });
+        
+        document.querySelector('.english-btn').addEventListener('click', function() {
+            localStorage.setItem('preferredLanguage', 'en');
+        });
+        
+        // При последующих посещениях можно автоматически перенаправлять
+        // на выбранный язык, если он сохранен
+        window.addEventListener('DOMContentLoaded', function() {
+            const preferredLanguage = localStorage.getItem('preferredLanguage');
+            if (preferredLanguage === 'ru') {
+                // window.location.href = 'russian.html';
+            } else if (preferredLanguage === 'en') {
+                // window.location.href = 'english.html';
+            }
+        });
+    </script>
+</body>
+</html>
