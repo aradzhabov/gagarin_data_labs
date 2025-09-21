@@ -4,12 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Next-Gen AI Avatars - Investment Opportunity</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
         body {
-            font-family: 'Arial', sans-serif;
+            font-family: 'Montserrat', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f5f7fa;
+            background: linear-gradient(135deg, #6e8efb, #a777e3);
             color: #333;
             display: flex;
             justify-content: center;
@@ -18,32 +19,56 @@
             text-align: center;
         }
         .container {
-            max-width: 800px;
-            padding: 40px;
-            background-color: white;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            max-width: 850px;
+            padding: 60px 50px;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 25px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+            backdrop-filter: blur(10px);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .container:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.2);
         }
         .logo {
-            max-width: 200px;
+            width: 180px;
+            height: 180px;
+            object-fit: contain;
+            border-radius: 50%;
             margin-bottom: 30px;
+            border: 4px solid #f0f0f0;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+            transition: all 0.4s ease;
+        }
+        .logo:hover {
+            transform: scale(1.05);
+            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15);
+        }
+        .company-name {
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: #5c6bc0;
+            margin-bottom: 10px;
         }
         h1 {
             color: #2c3e50;
-            font-size: 2.5rem;
-            margin-bottom: 20px;
+            font-size: 2.8rem;
+            font-weight: 700;
+            margin: 25px 0;
+            letter-spacing: -0.5px;
         }
         p {
-            font-size: 1.1rem;
-            line-height: 1.6;
-            margin-bottom: 30px;
-            color: #555;
+            font-size: 1.15rem;
+            line-height: 1.7;
+            margin: 25px 0;
+            color: #444;
         }
         .language-flags {
             display: flex;
             justify-content: center;
-            gap: 25px;
-            margin-top: 40px;
+            gap: 40px;
+            margin-top: 50px;
         }
         .flag-wrapper {
             display: flex;
@@ -53,26 +78,30 @@
             transition: all 0.3s ease;
         }
         .flag-wrapper:hover {
-            transform: translateY(-3px);
+            transform: translateY(-8px) scale(1.05);
         }
         .flag-wrapper:active {
-            transform: translateY(1px);
+            transform: translateY(2px) scale(0.98);
         }
         .flag-icon {
-            width: 40px;
-            height: 30px;
-            border-radius: 4px;
-            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+            width: 65px;
+            height: 65px;
+            border-radius: 50%;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
             transition: all 0.3s ease;
+            border: 3px solid white;
+            clip-path: circle(50% at 50% 50%);
         }
         .flag-icon:hover {
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+            transform: rotate(5deg);
         }
         .flag-label {
-            margin-top: 8px;
-            font-size: 0.9rem;
-            color: #555;
-            font-weight: bold;
+            margin-top: 12px;
+            font-size: 1rem;
+            color: #2c3e50;
+            font-weight: 600;
+            letter-spacing: 0.5px;
         }
     </style>
 </head>
@@ -86,12 +115,39 @@
         <p>Discover groundbreaking AI avatar technology and partnership/investment opportunity in your preferred language:</p>
 
         <div class="language-flags">
+            <!-- English Flag (UK) -->
             <div class="flag-wrapper" onclick="window.location.href='english.html'">
-                <img src="gb.png" alt="English" class="flag-icon">
+                <div class="flag-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 30">
+                        <defs>
+                            <clipPath id="circle-mask">
+                                <circle cx="30" cy="15" r="15" />
+                            </clipPath>
+                        </defs>
+                        <rect width="60" height="30" fill="#012169" clip-path="url(#circle-mask)" />
+                        <path d="M0,0 L60,30 M60,0 L0,30" stroke="#fff" stroke-width="6" clip-path="url(#circle-mask)" />
+                        <path d="M0,0 L60,30 M60,0 L0,30" stroke="#C8102E" stroke-width="2" clip-path="url(#circle-mask)" />
+                        <path d="M30,0 V30 M0,15 H60" stroke="#fff" stroke-width="10" clip-path="url(#circle-mask)" />
+                        <path d="M30,0 V30 M0,15 H60" stroke="#C8102E" stroke-width="6" clip-path="url(#circle-mask)" />
+                    </svg>
+                </div>
                 <span class="flag-label">English</span>
             </div>
+
+            <!-- Russian Flag -->
             <div class="flag-wrapper" onclick="window.location.href='russian.html'">
-                <img src="ru.png" alt="Russian" class="flag-icon">
+                <div class="flag-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 30">
+                        <defs>
+                            <clipPath id="circle-mask-ru">
+                                <circle cx="30" cy="15" r="15" />
+                            </clipPath>
+                        </defs>
+                        <rect width="60" height="10" y="0" fill="#fff" clip-path="url(#circle-mask-ru)" />
+                        <rect width="60" height="10" y="10" fill="#0039A6" clip-path="url(#circle-mask-ru)" />
+                        <rect width="60" height="10" y="20" fill="#D52B1E" clip-path="url(#circle-mask-ru)" />
+                    </svg>
+                </div>
                 <span class="flag-label">Русский</span>
             </div>
         </div>
