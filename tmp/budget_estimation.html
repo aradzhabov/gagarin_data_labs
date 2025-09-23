@@ -39,7 +39,7 @@
       Рассчитывать по:
       <select id="limitType">
         <option value="queue">Макс. длина очереди</option>
-        <option value="wait">Макс. время ожидания (сек)</option>
+        <option value="wait">Макс. время ожидания в очереди (сек)</option>
       </select>
     </label>
     <label>Значение: <input type="number" id="limitValue" value="60" min="1"></label>
@@ -90,7 +90,7 @@
 
       // Таблица роста очереди
       const timePoints = [1, 5, 10, 30, 60];
-      let queueTable = "<table><tr><th>Время пика</th><th>Длина очереди</th><th>Макс. время ожидания</th></tr>";
+      let queueTable = "<table><tr><th>Время пика</th><th>Длина очереди</th><th>Макс. время ожидания в очереди</th></tr>";
       if (delta <= 0) {
         queueTable += `<tr><td colspan="3">✅ Очередь не растёт</td></tr>`;
       } else {
