@@ -310,6 +310,36 @@
                 margin-bottom: 0.8rem; /* Уменьшено */
             }
         }
+        .telegram-link {
+    color: var(--secondary);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.telegram-link:hover {
+    color: #0088cc;
+    transform: translateY(-1px);
+}
+
+.telegram-link::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background: #0088cc;
+    transition: width 0.3s ease;
+}
+
+.telegram-link:hover::after {
+    width: 100%;
+}
+
+.fa-telegram {
+    color: #0088cc;
+}
     </style>
 </head>
 <body>
@@ -363,6 +393,10 @@
                 <i class="fas fa-envelope"></i>
                 <span>aradzhabov@gmail.com</span>
             </div>
+            <div class="contact-item">
+    <i class="fab fa-telegram"></i>
+    <a href="https://t.me/aradzhabov" target="_blank" class="telegram-link">@aradzhabov</a>
+</div>
         </div>
     </footer>
 </body>
