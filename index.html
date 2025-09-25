@@ -3,154 +3,281 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Next-Gen AI Avatars - Investment Opportunity. AlterEgo</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    <title>@aradzhabov - Gagarin Data Labs</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        body {
-            font-family: 'Montserrat', sans-serif;
+        * {
             margin: 0;
             padding: 0;
-            background: linear-gradient(135deg, #6e8efb, #a777e3);
-            color: #333;
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        :root {
+            --primary: #2c3e50;
+            --secondary: #3498db;
+            --accent: #e74c3c;
+            --light: #ecf0f1;
+            --dark: #2c3e50;
+            --shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        body {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            color: var(--dark);
+            line-height: 1.6;
             min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        header {
+            background: var(--primary);
+            color: white;
+            padding: 2rem 0;
             text-align: center;
+            box-shadow: var(--shadow);
         }
-        .container {
-            max-width: 850px;
-            padding: 60px 50px;
-            background: rgba(255, 255, 255, 0.95);
-            border-radius: 25px;
-            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
-            backdrop-filter: blur(10px);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        .container:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.2);
-        }
-        .logo {
+
+        .company-logo {
             width: 180px;
             height: 180px;
             object-fit: contain;
             border-radius: 50%;
-            margin-bottom: 30px;
-            border: 4px solid #f0f0f0;
+            margin: 0 auto 20px;
+            border: 4px solid var(--light);
             box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
             transition: all 0.4s ease;
+            background: white;
+            padding: 10px;
         }
-        .logo:hover {
+
+        .company-logo:hover {
             transform: scale(1.05);
             box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15);
         }
-        .company-name {
-            font-size: 1.8rem;
-            font-weight: 600;
-            color: #5c6bc0;
-            margin-bottom: 10px;
-        }
+
         h1 {
-            color: #2c3e50;
             font-size: 2.8rem;
+            margin-bottom: 0.5rem;
             font-weight: 700;
-            margin: 25px 0;
-            letter-spacing: -0.5px;
         }
-        p {
-            font-size: 1.15rem;
-            line-height: 1.7;
-            margin: 25px 0;
-            color: #444;
+
+        .tagline {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
         }
-        .language-flags {
-            display: flex;
-            justify-content: center;
-            gap: 40px;
-            margin-top: 50px;
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+            flex: 1;
         }
-        .flag-wrapper {
+
+        .intro {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding: 2rem;
+            background: white;
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+        }
+
+        .intro h2 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+            font-size: 2rem;
+        }
+
+        .intro p {
+            font-size: 1.1rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
             display: flex;
             flex-direction: column;
-            align-items: center;
-            cursor: pointer;
-            transition: all 0.3s ease;
         }
-        .flag-wrapper:hover {
-            transform: translateY(-8px) scale(1.05);
+
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
         }
-        .flag-wrapper:active {
-            transform: translateY(2px) scale(0.98);
-        }
-        .flag-icon {
-            width: 65px;
-            height: 65px;
+
+        .product-logo {
+            width: 150px;
+            height: 150px;
+            margin: 2rem auto 1rem;
+            background: white;
             border-radius: 50%;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
-            transition: all 0.3s ease;
-            border: 3px solid white;
-            clip-path: circle(50% at 50% 50%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+            border: 5px solid var(--secondary);
+            padding: 10px;
         }
-        .flag-icon:hover {
-            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
-            transform: rotate(5deg);
+
+        .product-logo img {
+            max-width: 100%;
+            max-height: 100%;
+            border-radius: 50%;
         }
-        .flag-label {
-            margin-top: 12px;
-            font-size: 1rem;
-            color: #2c3e50;
+
+        .product-logo i {
+            font-size: 60px;
+            color: var(--secondary);
+        }
+
+        .product-info {
+            padding: 1.5rem;
+            text-align: center;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .product-info h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+
+        .product-info p {
+            margin-bottom: 1.5rem;
+            flex: 1;
+        }
+
+        .btn {
+            display: inline-block;
+            background: var(--secondary);
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border-radius: 50px;
+            text-decoration: none;
             font-weight: 600;
-            letter-spacing: 0.5px;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            margin-top: auto;
+        }
+
+        .btn:hover {
+            background: var(--primary);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        footer {
+            background: var(--primary);
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: auto;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        @media (max-width: 768px) {
+            .products-grid {
+                grid-template-columns: 1fr;
+            }
+
+            h1 {
+                font-size: 2.2rem;
+            }
+
+            .intro h2 {
+                font-size: 1.8rem;
+            }
         }
     </style>
 </head>
 <body>
+    <header>
+        <img src="logo.png" alt="Gagarin Data Labs" class="company-logo">
+        <h1>@aradzhabov - Gagarin Data Labs</h1>
+<!--        <p class="tagline"></p>-->
+    </header>
+
     <div class="container">
-        <img src="logo.png" alt="Gagarin Data Labs" class="logo">
-        <h2 class="company-name">Gagarin Data Labs</h2>
+        <section class="intro">
+<!--            <h2></h2>-->
+            <p><i>I spend my free time developing assistive technology for people with disabilities.
+                <br>I’m committed to keeping these tools entirely free for their primary users, while also identifying which of the underlying technologies hold commercial potential.</i></p>
+        </section>
 
-        <h1>Next-Gen AI Avatars</h1>
-        <p>Revolutionary AI avatar technology combining social impact with high commercial potential and unique competitive advantages over market leaders.</p>
-        <p>Discover groundbreaking AI avatar technology and partnership/investment opportunity in your preferred language:</p>
+        <section class="products-grid">
 
-        <div class="language-flags">
-            <!-- English Flag (UK) -->
-            <div class="flag-wrapper" onclick="window.location.href='english.html'">
-                <div class="flag-icon">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 30">
-                        <defs>
-                            <clipPath id="circle-mask">
-                                <circle cx="30" cy="15" r="15" />
-                            </clipPath>
-                        </defs>
-                        <rect width="60" height="30" fill="#012169" clip-path="url(#circle-mask)" />
-                        <path d="M0,0 L60,30 M60,0 L0,30" stroke="#fff" stroke-width="6" clip-path="url(#circle-mask)" />
-                        <path d="M0,0 L60,30 M60,0 L0,30" stroke="#C8102E" stroke-width="2" clip-path="url(#circle-mask)" />
-                        <path d="M30,0 V30 M0,15 H60" stroke="#fff" stroke-width="10" clip-path="url(#circle-mask)" />
-                        <path d="M30,0 V30 M0,15 H60" stroke="#C8102E" stroke-width="6" clip-path="url(#circle-mask)" />
-                    </svg>
+            <div class="product-card">
+                <div class="product-logo">
+                    <i class="fas fa-computer-mouse" style="font-size: 60px;"></i>
+                    &nbsp;
+                    <i class="fas fa-universal-access" style="color: green;font-size: 60px;"></i>
                 </div>
-                <span class="flag-label">English</span>
+                <div class="product-info">
+                    <h3>AbleMouse (DIY edition)</h3>
+                    <p>Open-source alternative to solutions like MouthPad, eye-trackers, or even complex systems like Neuralink.
+                    <br>Control your mouse with just tongue movements or simple touches on fully customizable pedals with any available body part.
+                    </p>
+
+                    <a href="able_mouse.html" class="btn">Learn More</a>
+                </div>
             </div>
 
-            <!-- Russian Flag -->
-            <div class="flag-wrapper" onclick="window.location.href='russian.html'">
-                <div class="flag-icon">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 60 30">
-                        <defs>
-                            <clipPath id="circle-mask-ru">
-                                <circle cx="30" cy="15" r="15" />
-                            </clipPath>
-                        </defs>
-                        <rect width="60" height="10" y="0" fill="#fff" clip-path="url(#circle-mask-ru)" />
-                        <rect width="60" height="10" y="10" fill="#0039A6" clip-path="url(#circle-mask-ru)" />
-                        <rect width="60" height="10" y="20" fill="#D52B1E" clip-path="url(#circle-mask-ru)" />
-                    </svg>
+            <div class="product-card">
+                <div class="product-logo">
+                    <img src="AE.exe.png" alt="Ægo.exe - lipsync beyond reality">
                 </div>
-                <span class="flag-label">Русский</span>
+                <div class="product-info">
+                    <h3>AlterEgo = Ægo.exe</h3>
+                    <p>Real-time AI Avatars with lip-sync for Accessibility and Beyond. <br>
+                    Works even on laptop with NO gpu, runs locally with full data privacy.</p>
+            <a href="english.html" class="btn">Learn More</a>
+                </div>
+            </div>
+
+
+
+        </section>
+    </div>
+
+    <footer>
+        <p>© 2025 Gagarin Data Labs Project. All rights reserved.</p>
+        <div class="contact-info">
+            <div class="contact-item">
+                <i class="fas fa-envelope"></i>
+                <span>aradzhabov@gmail.com</span>
             </div>
         </div>
-    </div>
+    </footer>
 </body>
 </html>

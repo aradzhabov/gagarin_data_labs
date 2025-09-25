@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AbleMouse - Affordable Assistive Technology</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #2563eb;
+            --secondary: #3b82f6;
+            --accent: #22d3ee;
+            --light: #f3f4f6;
+            --dark: #1f2937;
+            --success: #10b981;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f9fafb;
+            color: var(--dark);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+        }
+
+        .logo-container {
+            margin-bottom: 1.5rem;
+        }
+
+        .logo {
+            width: 150px;
+            height: 150px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .logo i {
+            font-size: 70px;
+            color: var(--primary);
+        }
+
+        h1 {
+            font-size: 2.8rem;
+            margin-bottom: 1rem;
+        }
+
+        .tagline {
+            font-size: 1.4rem;
+            font-weight: 300;
+            margin-bottom: 1.5rem;
+        }
+
+        section {
+            padding: 4rem 0;
+        }
+
+        h2 {
+            font-size: 2.2rem;
+            margin-bottom: 2rem;
+            color: var(--primary);
+            text-align: center;
+        }
+
+        h3 {
+            font-size: 1.5rem;
+            margin: 1.5rem 0 1rem;
+            color: var(--secondary);
+        }
+
+        .intro {
+            background-color: white;
+            text-align: center;
+            padding: 3rem 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            margin-top: -50px;
+            position: relative;
+        }
+
+        .motto {
+            font-style: italic;
+            font-size: 1.3rem;
+            color: var(--primary);
+            margin: 1.5rem 0;
+            padding: 1rem;
+            border-left: 4px solid var(--accent);
+            background-color: #eff6ff;
+            text-align: center;
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .feature-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .feature-icon {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .how-it-works {
+            background-color: #eff6ff;
+        }
+
+        .steps {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .step {
+            flex: 1;
+            min-width: 250px;
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            text-align: center;
+        }
+
+        .step-number {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background: var(--primary);
+            color: white;
+            border-radius: 50%;
+            line-height: 40px;
+            margin-bottom: 1rem;
+        }
+
+        .audience {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .audience-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        }
+
+        .philosophy {
+            text-align: center;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            padding: 4rem 2rem;
+        }
+
+        .philosophy-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .links {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            padding: 0.8rem 1.5rem;
+            background: var(--primary);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .btn:hover {
+            background: var(--secondary);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .btn i {
+            margin-right: 0.5rem;
+        }
+
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .tag {
+            padding: 0.5rem 1rem;
+            background: #dbeafe;
+            color: var(--primary);
+            border-radius: 50px;
+            font-size: 0.9rem;
+        }
+
+        footer {
+            background: var(--dark);
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 3rem;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.2rem;
+            }
+
+            .tagline {
+                font-size: 1.2rem;
+            }
+
+            .features, .audience {
+                grid-template-columns: 1fr;
+            }
+
+            .steps {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo-container">
+                <div class="logo">
+<!--                    <img src="able_mouse_icon.png" class="fas fa-computer-mouse>-->
+                    &nbsp;
+                    <i class="fas fa-computer-mouse" style="font-size: 60px;"></i>
+                    &nbsp;
+                     <i class="fas fa-universal-access" style="color: green; font-size: 60px;"></i>
+                </div>
+<!--            <div class="logo-container">-->
+<!--                    <div class="logo" style="background: white; position: relative;">-->
+<!--                    <i class="fas fa-computer-mouse" style="color: blue; font-size: 50px; position: absolute; top: 20px;"></i>-->
+<!--                    <i class="fas fa-universal-access" style="color: green; font-size: 50px; position: absolute; bottom: 20px;"></i>-->
+<!--                    </div>-->
+<!--            </div>-->
+
+            <h1>AbleMouse</h1>
+            <p class="tagline">The Affordable & DIY Alternative to High-Tech Assistive Devices</p>
+        </div>
+</div>
+    </header>
+
+    <div class="container">
+        <section class="intro">
+            <p>AbleMouse is an open-source project that breaks down the barriers between a person and their computer.
+                <br>Control your mouse with just tongue movements or simple touches on fully customizable pedals with any available body part.</p>
+
+            <p class="motto">Our motto: Affordable technology should be accessible to everyone.</p>
+        </section>
+
+        <section>
+            <h2>Why is this a revolution?</h2>
+
+            <div class="features">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-hands-helping"></i>
+                    </div>
+                    <h3>The Democratizing Alternative</h3>
+                    <p>Think of it as a DIY, open-source alternative to expensive solutions like the MouthPad®, eye-trackers, or even complex systems like Neuralink. Everyone deserves access to assistive technology</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-dollar-sign"></i>
+                    </div>
+                    <h3>Virtually Free</h3>
+                    <p>All components cost less than a cup of coffee (<$10). Price is no longer an obstacle.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-plug"></i>
+                    </div>
+                    <h3>Complete Independence</h3>
+                    <p>Works on Windows, macOS, and Android. Full cross-platform compatibility.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-code-branch"></i>
+                    </div>
+                    <h3>Open-Source & Hackable</h3>
+                    <p>Assemble and customize it yourself in a garage, workshop, or makerspace. All instructions and code are openly available. It's built by the community, for the community.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>For Everyone</h3>
+                    <p>Helps both completely immobile users and those with even minimal motor skills.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="how-it-works">
+            <h2>How does it work?</h2>
+
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3>Visit GitHub</h3>
+                    <p><a href="https://github.com/aradzhabov/AbleMouse">See all details</a></p>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3>Assemble</h3>
+                    <p><a href="https://github.com/aradzhabov/AbleMouse/blob/main/docs/en/assemble-guide.md">Assemble a small device based on Esp-32 board.</a></p>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3>Connect</h3>
+                    <p>Connect to your AbleMouse via Bluetooth</p>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <h3>Control</h3>
+                    <p><a href="https://youtu.be/1eeg7Sakj_I">Your movement now controls the cursor. You are back online, you are connected again.</a></p>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Who is it for?</h2>
+            <div class="audience">
+                <div class="audience-card">
+                    <h3>People with specific conditions</h3>
+                    <p>For people who, for various reasons, are unable to operate a regular mouse effectively (ALS (Amyotrophic Lateral Sclerosis), spinal cord injuries, muscular dystrophy...)</p>
+                </div>
+
+                <div class="audience-card">
+                    <h3>Rehabilitation patients</h3>
+                    <p>For those undergoing rehabilitation after a stroke.</p>
+                </div>
+
+                <div class="audience-card">
+                    <h3>Caregivers & advocates</h3>
+                    <p>For parents, teachers, and activists who want to provide immediate, affordable help to their loved ones and the community.</p>
+                </div>
+            </div>
+        </section>
+
+<!--        <section class="philosophy">-->
+<!--            <div class="philosophy-content">-->
+<!--                <h2>Our Philosophy</h2>-->
+<!--                <p>We are not selling a device. We are selling an idea. The idea that life-changing technology should be a right, not a privilege.</p>-->
+<!--            </div>-->
+<!--        </section>-->
+        <section class="how-it-works">
+            <h2>Get Involved</h2>
+
+            <div class="links">
+                <a href="https://github.com/aradzhabov/AbleMouse" class="btn"><i class="fab fa-github"></i> GitHub</a>
+                <a href="https://github.com/aradzhabov/AbleMouse/blob/main/docs/en/assemble-guide.md" class="btn"><i class="fas fa-book"></i> Assembly Instructions</a>
+                <a href="https://youtu.be/1eeg7Sakj_I" class="btn"><i class="fas fa-video"></i> Video Demo</a>
+                <a href="#" class="btn"><i class="fas fa-globe"></i> Our Website</a>
+            </div>
+
+            <div class="tags">
+                <span class="tag">#Accessibility</span>
+                <span class="tag">#AssistiveTech</span>
+                <span class="tag">#OpenSource</span>
+                <span class="tag">#DIY</span>
+                <span class="tag">#Neuralink</span>
+                <span class="tag">#MouthPad</span>
+                <span class="tag">#EyeTracker</span>
+                <span class="tag">#Innovation</span>
+                <span class="tag">#Freedom</span>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>AbleMouse - Democratizing Assistive Technology</p>
+            <p>&copy; 2025 GagarinDataLabs Project. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
