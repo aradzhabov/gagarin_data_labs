@@ -37,7 +37,7 @@
         header {
             background: linear-gradient(to bottom, var(--card-bg) 0%, transparent 100%);
             color: var(--primary);
-            padding: 3rem 0;
+            padding: 1.5rem 0; /* Уменьшено с 3rem */
             text-align: center;
             position: relative;
         }
@@ -48,22 +48,22 @@
             bottom: 0;
             left: 50%;
             transform: translateX(-50%);
-            width: 200px;
+            width: 150px; /* Уменьшено */
             height: 1px;
             background: linear-gradient(90deg, transparent, var(--accent), transparent);
         }
 
         .company-logo {
-            width: 150px;
-            height: 150px;
+            width: 125px; /* Уменьшено с 150px */
+            height: 125px; /* Уменьшено с 150px */
             object-fit: contain;
             border-radius: 50%;
-            margin: 0 auto 1.5rem;
+            margin: 0 auto 1rem; /* Уменьшено снизу */
             border: 2px solid rgba(255, 255, 255, 0.1);
             box-shadow: var(--shadow);
             transition: all 0.4s ease;
             background: var(--card-bg);
-            padding: 10px;
+            padding: 8px; /* Уменьшено */
             filter: brightness(1.1);
         }
 
@@ -74,8 +74,8 @@
         }
 
         h1 {
-            font-size: 2.5rem;
-            margin-bottom: 0.5rem;
+            font-size: 2rem; /* Уменьшено с 2.5rem */
+            margin-bottom: 0.3rem; /* Уменьшено */
             font-weight: 300;
             background: linear-gradient(90deg, #fff, var(--accent));
             -webkit-background-clip: text;
@@ -84,7 +84,7 @@
         }
 
         .tagline {
-            font-size: 1.1rem;
+            font-size: 1rem; /* Уменьшено */
             opacity: 0.8;
             max-width: 600px;
             margin: 0 auto;
@@ -94,14 +94,14 @@
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 2rem;
+            padding: 1.5rem; /* Уменьшено с 2rem */
             flex: 1;
         }
 
         .intro {
             text-align: center;
-            margin-bottom: 4rem;
-            padding: 2.5rem;
+            margin-bottom: 3rem; /* Уменьшено с 4rem */
+            padding: 2rem; /* Уменьшено */
             background: var(--card-bg);
             border-radius: 12px;
             box-shadow: var(--shadow);
@@ -128,23 +128,24 @@
         .intro h2 {
             color: var(--primary);
             margin-bottom: 1rem;
-            font-size: 1.8rem;
+            font-size: 1.6rem; /* Уменьшено */
             font-weight: 400;
         }
 
         .intro p {
-            font-size: 1.1rem;
+            font-size: 1rem; /* Уменьшено */
             max-width: 800px;
             margin: 0 auto;
             opacity: 0.9;
             font-style: italic;
+            line-height: 1.5; /* Уменьшено */
         }
 
         .products-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 2rem;
-            margin-bottom: 3rem;
+            gap: 1.5rem; /* Уменьшено с 2rem */
+            margin-bottom: 2rem; /* Уменьшено с 3rem */
         }
 
         .product-card {
@@ -165,9 +166,9 @@
         }
 
         .product-logo {
-            width: 130px;
-            height: 130px;
-            margin: 2rem auto 1rem;
+            width: 110px; /* Уменьшено */
+            height: 110px; /* Уменьшено */
+            margin: 1.5rem auto 0.8rem; /* Уменьшено */
             background: var(--bg);
             border-radius: 50%;
             display: flex;
@@ -175,7 +176,7 @@
             justify-content: center;
             box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.5);
             border: 1px solid rgba(255, 255, 255, 0.1);
-            padding: 15px;
+            padding: 12px; /* Уменьшено */
             transition: all 0.4s ease;
         }
 
@@ -191,12 +192,12 @@
         }
 
         .product-logo i {
-            font-size: 55px;
+            font-size: 45px; /* Уменьшено */
             color: var(--accent);
         }
 
         .product-info {
-            padding: 1.5rem;
+            padding: 1.2rem; /* Уменьшено */
             text-align: center;
             flex: 1;
             display: flex;
@@ -204,24 +205,25 @@
         }
 
         .product-info h3 {
-            font-size: 1.4rem;
-            margin-bottom: 1rem;
+            font-size: 1.3rem; /* Уменьшено */
+            margin-bottom: 0.8rem; /* Уменьшено */
             color: var(--primary);
             font-weight: 500;
         }
 
         .product-info p {
-            margin-bottom: 1.5rem;
+            margin-bottom: 1.2rem; /* Уменьшено */
             flex: 1;
             opacity: 0.8;
-            font-size: 1rem;
+            font-size: 0.95rem; /* Уменьшено */
+            line-height: 1.5; /* Уменьшено */
         }
 
         .btn {
             display: inline-block;
             background: transparent;
             color: var(--accent);
-            padding: 0.8rem 1.8rem;
+            padding: 0.7rem 1.5rem; /* Уменьшено */
             border-radius: 30px;
             text-decoration: none;
             font-weight: 500;
@@ -232,6 +234,7 @@
             position: relative;
             overflow: hidden;
             z-index: 1;
+            font-size: 0.95rem; /* Уменьшено */
         }
 
         .btn::before {
@@ -259,7 +262,7 @@
             background: var(--card-bg);
             color: var(--secondary);
             text-align: center;
-            padding: 2.5rem 0;
+            padding: 2rem 0; /* Уменьшено */
             margin-top: auto;
             border-top: 1px solid rgba(255, 255, 255, 0.05);
         }
@@ -267,8 +270,8 @@
         .contact-info {
             display: flex;
             justify-content: center;
-            gap: 2rem;
-            margin-top: 1rem;
+            gap: 1.5rem; /* Уменьшено */
+            margin-top: 0.8rem; /* Уменьшено */
             flex-wrap: wrap;
         }
 
@@ -276,23 +279,35 @@
             display: flex;
             align-items: center;
             gap: 0.5rem;
+            font-size: 0.95rem; /* Уменьшено */
         }
 
         @media (max-width: 768px) {
             .products-grid {
                 grid-template-columns: 1fr;
+                gap: 1rem; /* Уменьшено для мобильных */
             }
 
             h1 {
-                font-size: 2rem;
+                font-size: 1.7rem; /* Уменьшено */
             }
 
             .intro h2 {
-                font-size: 1.6rem;
+                font-size: 1.4rem; /* Уменьшено */
             }
 
             .container {
-                padding: 1.5rem;
+                padding: 1rem; /* Уменьшено */
+            }
+
+            header {
+                padding: 1rem 0; /* Уменьшено для мобильных */
+            }
+
+            .company-logo {
+                width: 80px; /* Уменьшено для мобильных */
+                height: 80px; /* Уменьшено для мобильных */
+                margin-bottom: 0.8rem; /* Уменьшено */
             }
         }
     </style>
@@ -308,23 +323,21 @@
         <section class="intro">
 <!--            <h2></h2>-->
             <p><i>I spend my free time developing assistive technology for people with disabilities.
-                <br>I’m committed to keeping these tools entirely free for their primary users, while also identifying which of the underlying technologies hold commercial potential.</i></p>
+                <br>I'm committed to keeping these tools entirely free for their primary users, while also identifying which of the underlying technologies hold commercial potential.</i></p>
         </section>
 
         <section class="products-grid">
-
             <div class="product-card">
                 <div class="product-logo">
-                    <i class="fas fa-computer-mouse" style="font-size: 60px;"></i>
+                    <i class="fas fa-computer-mouse" style="font-size: 50px;"></i>
                     &nbsp;
-                    <i class="fas fa-universal-access" style="color: green;font-size: 60px;"></i>
+                    <i class="fas fa-universal-access" style="color: green;font-size: 50px;"></i>
                 </div>
                 <div class="product-info">
                     <h3>AbleMouse (DIY edition)</h3>
                     <p>Open-source alternative to solutions like MouthPad, eye-trackers, or even complex systems like Neuralink.
                     <br>Control your mouse with just tongue movements or simple touches on fully customizable pedals with any available body part.
                     </p>
-
                     <a href="able_mouse.html" class="btn">Learn More</a>
                 </div>
             </div>
@@ -337,12 +350,9 @@
                     <h3>AlterEgo = Ægo.exe</h3>
                     <p>Real-time AI Avatars with lip-sync for Accessibility and Beyond. <br>
                     Works even on laptop with NO gpu, runs locally with full data privacy.</p>
-            <a href="english.html" class="btn">Learn More</a>
+                    <a href="english.html" class="btn">Learn More</a>
                 </div>
             </div>
-
-
-
         </section>
     </div>
 
