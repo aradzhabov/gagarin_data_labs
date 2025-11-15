@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LocalLiveAvatar - Real-Time Avatar Technology</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f8f9fa;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        .logo {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .tagline {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto 30px;
+        }
+
+        .hero-image {
+            max-width: 800px;
+            margin: 30px auto;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .hero-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        section {
+            padding: 60px 0;
+        }
+
+        h2 {
+            font-size: 2rem;
+            margin-bottom: 30px;
+            color: #2c3e50;
+            text-align: center;
+        }
+
+        .intro {
+            background-color: white;
+            border-radius: 10px;
+            padding: 40px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            margin-bottom: 40px;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .feature-card {
+            background-color: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .feature-icon {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: #6a11cb;
+        }
+
+        .feature-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: #2c3e50;
+        }
+
+        .performance {
+            background-color: #f1f8ff;
+        }
+
+        .performance-stats {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin-top: 40px;
+        }
+
+        .stat {
+            text-align: center;
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            margin: 10px;
+            flex: 1;
+            min-width: 250px;
+        }
+
+        .stat-value {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #6a11cb;
+            margin-bottom: 10px;
+        }
+
+        .stat-label {
+            font-size: 1rem;
+            color: #7f8c8d;
+        }
+
+        .video-container {
+            max-width: 800px;
+            margin: 40px auto;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .video-wrapper {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+            height: 0;
+        }
+
+        .video-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .use-cases {
+            background-color: white;
+        }
+
+        .use-case {
+            display: flex;
+            align-items: center;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+        }
+
+        .use-case:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+
+        .use-case-content {
+            flex: 1;
+            padding: 20px;
+            min-width: 300px;
+        }
+
+        .use-case-image {
+            flex: 1;
+            min-width: 300px;
+            height: 300px;
+            background-color: #f1f8ff;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 5rem;
+            color: #6a11cb;
+        }
+
+        .mission {
+            background-color: #f1f8ff;
+            text-align: center;
+        }
+
+        .mission-content {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .cta {
+            background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+            color: white;
+            text-align: center;
+            padding: 80px 0;
+        }
+
+        .cta h2 {
+            color: white;
+            margin-bottom: 20px;
+        }
+
+        .cta p {
+            max-width: 600px;
+            margin: 0 auto 30px;
+            font-size: 1.1rem;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: white;
+            color: #6a11cb;
+            padding: 12px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: 2px solid white;
+        }
+
+        .btn:hover {
+            background-color: transparent;
+            color: white;
+        }
+
+        footer {
+            background-color: #2c3e50;
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            .performance-stats {
+                flex-direction: column;
+            }
+
+            .stat {
+                margin: 10px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1 class="logo">LocalLiveAvatar</h1>
+            <p class="tagline">Real-time avatar technology that runs efficiently on everyday hardware</p>
+            <div class="hero-image">
+                <!-- Placeholder for the image - in a real implementation, you would use the actual image -->
+                <div style="background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%); height: 400px; display: flex; align-items: center; justify-content: center; color: white; font-size: 1.5rem;">
+                    LocalLiveAvatar Icon
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="intro">
+        <div class="container">
+            <h2>What Makes LocalLiveAvatar Different</h2>
+            <p>Unlike other avatar solutions, LocalLiveAvatar is built from the ground up for speed, efficiency, and accessibility—running seamlessly on everyday hardware, with no need for high-end GPUs or cloud dependency.</p>
+        </div>
+    </section>
+
+    <section class="features">
+        <div class="container">
+            <h2>Key Features</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">⚡</div>
+                    <h3>Blazing Speed & Unmatched Energy Efficiency</h3>
+                    <p>LocalLiveAvatar generates lip-synced video output almost instantly—even on a laptop's CPU, with zero GPU required. This extreme optimization drastically reduces infrastructure costs and power consumption.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">⏱️</div>
+                    <h3>Zero Latency. Unlimited Duration.</h3>
+                    <p>Response time is instantaneous—whether the avatar speaks for 2 seconds or 20 minutes. There's no waiting for full video generation. Instead, frames are delivered in chunks as they're rendered.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">🔒</div>
+                    <h3>Complete Data Privacy</h3>
+                    <p>Because LocalLiveAvatar runs on your own servers, your data never leaves your control. No third-party cloud services mean no risk of sensitive data being leaked, stored, or misused.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">🎥</div>
+                    <h3>Live Streaming with Real-Time Overlay Effects</h3>
+                    <p>Since output is generated and streamed in real time, you can instantly integrate professional streaming tools to enhance the experience with background removal, dynamic overlays, and live filters.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">👤</div>
+                    <h3>Easy Avatar Creation</h3>
+                    <p>An avatar can be generated from almost any video or photo. Once created, it can voice any text or audio with perfect lip synchronization in any language.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="performance">
+        <div class="container">
+            <h2>Performance Metrics</h2>
+            <div class="performance-stats">
+                <div class="stat">
+                    <div class="stat-value">1.3x</div>
+                    <div class="stat-label">On a mobile CPU (AMD Ryzen 9 7845HX), the system produces approximately 1.3 seconds of avatar video per second of CPU time.</div>
+                </div>
+
+                <div class="stat">
+                    <div class="stat-value">5.3x</div>
+                    <div class="stat-label">On a modest mobile GPU (NVIDIA GeForce RTX 5070 8GB), that jumps to 5.3 seconds of video per second of processing time.</div>
+                </div>
+            </div>
+
+            <div class="video-container">
+                <div class="video-wrapper">
+                    <iframe src="https://www.youtube.com/embed/T_w3Z3H3VAQ" title="LocalLiveAvatar Demo" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+            </div>
+
+            <p style="text-align: center; margin-top: 20px;">In the demo video, the first example shows my custom test application running entirely on a standard laptop CPU—no GPU.</p>
+        </div>
+    </section>
+
+    <section class="use-cases">
+        <div class="container">
+            <h2>Potential Applications</h2>
+
+            <div class="use-case">
+                <div class="use-case-content">
+                    <h3>Accessibility Technology</h3>
+                    <p>The product was developed as part of my project aimed at assisting people with disabilities. The goal was to create a digital twin for individuals who have lost their voice and/or suffer from visual impairments resulting from trauma.</p>
+                    <p>For such individuals, I personally create a full digital clone—replicating their voice and a personalized avatar. Afterward, using a Telegram bot, these individuals can communicate and vocalize their thoughts. For many people and their families, this holds significant psychological importance.</p>
+                </div>
+                <div class="use-case-image">♿</div>
+            </div>
+
+            <div class="use-case">
+                <div class="use-case-content">
+                    <h3>Commercial Applications</h3>
+                    <p>The technology itself has enormous commercial potential. I do not make the source code publicly available to prevent its misuse by individuals attempting to deceive others in real time using deepfakes.</p>
+                    <p>Therefore, I am open to collaborating only with companies trusted by the public. For interested parties, I can arrange a demonstration as follows: we connect via a conference call, you send your audio file to me through my Telegram bot, and we immediately see live avatar speaking your text.</p>
+                </div>
+                <div class="use-case-image">💼</div>
+            </div>
+
+            <div class="use-case">
+                <div class="use-case-content">
+                    <h3>Future Possibilities</h3>
+                    <p>Perhaps a product like this could even contribute to the development of a secret OpenAI project alongside designer Jony Ive—since now the most resource-intensive part of avatar creation can run directly on the user's device.</p>
+                    <p>Maybe robot manufacturers would take interest, too—this could make their robots more engaging, expressive, and emotionally appealing in human interactions. We could even imagine avatar marketplaces, custom avatars for brands, and much more.</p>
+                </div>
+                <div class="use-case-image">🚀</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="mission">
+        <div class="container">
+            <div class="mission-content">
+                <h2>Our Mission</h2>
+                <p>I provide this service free of charge to people with disabilities. The technology has the power to transform communication for those who need it most, while also opening up new possibilities in commercial applications when used responsibly.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta">
+        <div class="container">
+            <h2>Interested in LocalLiveAvatar?</h2>
+            <p>Contact us to schedule a live demonstration and see the technology in action.</p>
+            <a href="#" class="btn">Request a Demo</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>LocalLiveAvatar - Real-Time Avatar Technology</p>
+            <p>© 2023 All Rights Reserved</p>
+        </div>
+    </footer>
+</body>
+</html>
