@@ -1,304 +1,113 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AbleMouse - Продукты для специальных возможностей</title>
     <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-
         body {
-            background-color: #f5f9fc;
-            color: #333;
-            line-height: 1.6;
-            padding: 20px;
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background-color: #f4f7f9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
         }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            background-color: white;
-            border-radius: 12px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+        .table-container {
+            background: white;
             padding: 30px;
-        }
-
-        header {
-            text-align: center;
-            margin-bottom: 40px;
-            padding-bottom: 20px;
-            border-bottom: 1px solid #eaeaea;
-        }
-
-        h1 {
-            color: #2c3e50;
-            margin-bottom: 10px;
-            font-size: 2.5rem;
-        }
-
-        .subtitle {
-            color: #7f8c8d;
-            font-size: 1.2rem;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
             max-width: 800px;
-            margin: 0 auto 20px;
         }
-
-        .product-table {
+        h2 {
+            color: #1a1a1a;
+            margin-top: 0;
+            margin-bottom: 20px;
+            font-size: 24px;
+            border-bottom: 2px solid #eef2f6;
+            padding-bottom: 10px;
+        }
+        table {
             width: 100%;
             border-collapse: collapse;
-            margin-top: 20px;
+            font-size: 16px;
         }
-
-        .product-table th {
-            background-color: #3498db;
-            color: white;
-            font-weight: 600;
+        th {
             text-align: left;
-            padding: 16px;
-            font-size: 1.1rem;
-        }
-
-        .product-table td {
-            padding: 20px 16px;
-            border-bottom: 1px solid #eaeaea;
-            vertical-align: top;
-        }
-
-        .product-table tr:nth-child(even) {
+            padding: 12px 15px;
             background-color: #f8fafc;
+            color: #64748b;
+            text-transform: uppercase;
+            font-size: 12px;
+            letter-spacing: 0.05em;
         }
-
-        .product-table tr:hover {
-            background-color: #f0f7ff;
+        td {
+            padding: 15px;
+            border-bottom: 1px solid #eef2f6;
+            color: #334155;
         }
-
-        .product-name {
-            font-weight: 700;
-            color: #2c3e50;
-            font-size: 1.2rem;
+        tr:last-child td {
+            border-bottom: none;
         }
-
-        .product-link {
-            color: #3498db;
-            text-decoration: none;
-            font-weight: 600;
-            display: inline-block;
-            margin-top: 8px;
-        }
-
-        .product-link:hover {
-            text-decoration: underline;
-        }
-
-        .compatibility {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-            margin-top: 5px;
-        }
-
-        .os-badge {
-            background-color: #e1f0fa;
-            color: #2c3e50;
-            padding: 5px 10px;
+        .rank-badge {
+            background-color: #ecfdf5;
+            color: #059669;
+            padding: 4px 10px;
             border-radius: 20px;
-            font-size: 0.85rem;
-            font-weight: 500;
-        }
-
-        .os-badge.windows {
-            background-color: #00a4ef;
-            color: white;
-        }
-
-        .os-badge.mac {
-            background-color: #555;
-            color: white;
-        }
-
-        .os-badge.unix {
-            background-color: #e95420;
-            color: white;
-        }
-
-        .video-container {
-            margin-top: 15px;
-            width: 100%;
-            position: relative;
-            overflow: hidden;
-            border-radius: 8px;
-            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
-        }
-
-        .video-container iframe {
-            width: 100%;
-            height: 200px;
-            border: none;
-        }
-
-        .video-title {
             font-weight: 600;
-            margin-top: 10px;
-            color: #2c3e50;
+            font-size: 14px;
         }
-
-        .video-link {
-            display: inline-block;
-            background-color: #ff4757;
-            color: white;
-            padding: 8px 15px;
-            border-radius: 5px;
-            text-decoration: none;
+        .rank-top {
+            background-color: #fffbeb;
+            color: #d97706;
+            border: 1px solid #fde68a;
+        }
+        .date-cell {
+            color: #94a3b8;
+            font-family: monospace;
+        }
+        .product-name {
             font-weight: 600;
-            margin-top: 10px;
-            transition: background-color 0.3s;
-        }
-
-        .video-link:hover {
-            background-color: #ff3742;
-        }
-
-        .product-description {
-            margin-bottom: 10px;
-        }
-
-        @media (max-width: 992px) {
-            .container {
-                padding: 20px;
-            }
-
-            .product-table {
-                display: block;
-                overflow-x: auto;
-            }
-
-            .product-table th,
-            .product-table td {
-                min-width: 200px;
-            }
-
-            .video-container iframe {
-                height: 180px;
-            }
-        }
-
-        @media (max-width: 768px) {
-            h1 {
-                font-size: 2rem;
-            }
-
-            .subtitle {
-                font-size: 1rem;
-            }
-
-            .video-container iframe {
-                height: 160px;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .video-container iframe {
-                height: 140px;
-            }
-        }
-
-        footer {
-            text-align: center;
-            margin-top: 40px;
-            padding-top: 20px;
-            border-top: 1px solid #eaeaea;
-            color: #7f8c8d;
-            font-size: 0.9rem;
+            color: #0f172a;
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <header>
-            <h1>AbleMouse</h1>
-            <p class="subtitle">
-                AbleMouse представляет собой несколько отдельных продуктов, разработанных для помощи пользователям в зависимости от их индивидуальных физических возможностей. Ниже приведена таблица, которая поможет сориентироваться в доступных вариантах. Каждое название продукта содержит ссылку на его отдельную страницу с подробной информацией.
-            </p>
-        </header>
 
-        <main>
-            <table class="product-table">
-                <thead>
-                    <tr>
-                        <th>Название продукта</th>
-                        <th>Какие трудности испытывает человек</th>
-                        <th>Что может делать человек / какую часть тела может использовать</th>
-                        <th>Краткое описание и ссылка на видео и детальную информацию</th>
-                        <th>Совместимые ОС</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>
-                            <div class="product-name">AbleMouse Beyond Switch edition</div>
-                            <a href="#" class="product-link">Подробная информация о продукте →</a>
-                        </td>
-                        <td>Полная неподвижность тела и головы</td>
-                        <td>
-                            <p><strong>3.1</strong> Приоткрыть рот. Представьте человека, который полностью парализован (и тело, и голова) и при этом НЕ может говорить. В конкретном случае, о котором я говорю, человеку было доступно лишь одно микродвижение — он мог только слегка приоткрыть рот.</p>
-                            <p><strong>3.2</strong> Архитектура системы позволяет в качестве сигнала для управления компьютером использовать любой один доступный сигнал от человека. Например сейчас я работаю над возможностью управления компьютером когда даже мимика лица или движения глаз недоступны. Планируемое решение не основано на считывании сигналов мозга, а использует другой подход (пока суть подхода раскрывать не буду — хочу сначала убедиться, что всё работает).</p>
-                        </td>
-                        <td>
-                            <p class="product-description">
-                                Инновационная система управления компьютером для людей с серьезными ограничениями подвижности. Использует минимальные доступные движения для полного контроля над курсором и выполнением команд.
-                            </p>
-                            <div class="video-container">
-                                <iframe
-                                    src="https://rutube.ru/play/embed/000e3cc6ab1bcda3238397a89fb534ff/"
-                                    allow="clipboard-write; autoplay; web-share"
-                                    allowfullscreen
-                                    title="Видео демонстрация AbleMouse Beyond Switch edition">
-                                </iframe>
-                            </div>
-                            <div class="video-title">Демонстрация работы AbleMouse Beyond Switch edition</div>
-                            <a href="https://rutube.ru/video/000e3cc6ab1bcda3238397a89fb534ff/" class="video-link" target="_blank">Открыть видео на Rutube</a>
-                        </td>
-                        <td>
-                            <div class="compatibility">
-                                <span class="os-badge windows">Windows</span>
-                                <span class="os-badge mac">Mac OS (требуется тестирование)</span>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <div class="product-name">AbleMouse AI Edition</div>
-                            <a href="#" class="product-link">Подробная информация о продукте →</a>
-                        </td>
-                        <td>Полная неподвижность тела</td>
-                        <td>Может поворачивать и опускать/поднимать голову; функционируют глаза или рот</td>
-                        <td>
-                            <p class="product-description">
-                                Продвинутая версия AbleMouse с использованием искусственного интеллекта для распознавания движений головы, глаз и мимики. Обеспечивает более естественное и точное управление компьютером для пользователей с ограниченной подвижностью.
-                            </p>
-                            <a href="#" class="video-link">Смотреть видео демонстрацию</a>
-                        </td>
-                        <td>
-                            <div class="compatibility">
-                                <span class="os-badge windows">Windows</span>
-                                <span class="os-badge mac">macOS</span>
-                                <span class="os-badge unix">Unix/Ubuntu (требуется тестирование)</span>
-                            </div>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-        </main>
+<div class="table-container">
+    <h2>AbleMouse Journey: Product Hunt "Product of the Day" Rankings</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Product </th>
+                <th>Product of the Day Ranking</th>
+                <th>Launch Date</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="product-name">AbleMouse DIY edition</td>
+                <td><span class="rank-badge rank-top">#7 Product of the Day</span></td>
+                <td class="date-cell">Sep 2025</td>
+            </tr>
+            <tr>
+                <td class="product-name">AbleMouse MouseCommander</td>
+                <td><span class="rank-badge">#10 Product of the Day</span></td>
+                <td class="date-cell">Nov 2025</td>
+            </tr>
+            <tr>
+                <td class="product-name">AbleMouse AI edition</td>
+                <td><span class="rank-badge rank-top">#8 Product of the Day</span></td>
+                <td class="date-cell">Dec 2025</td>
+            </tr>
+            <tr>
+                <td class="product-name">AbleMouse Beyond Switch edition</td>
+                <td><span class="rank-badge">#13 Product of the Day</span></td>
+                <td class="date-cell">Jan 2026</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
 
-        <footer>
-            <p>© 2023 AbleMouse. Все продукты разработаны для расширения возможностей людей с ограниченной подвижностью.</p>
-            <p style="margin-top: 5px;">Информация представлена для ознакомления. Технические характеристики могут меняться.</p>
-        </footer>
-    </div>
 </body>
 </html>
