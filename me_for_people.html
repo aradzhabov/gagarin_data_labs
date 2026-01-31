@@ -129,7 +129,51 @@
     </div>
 
     <article id="ht-content" class="ht-content">
+        <style>
+    .ht-content-header {
+        display: flex;
+        align-items: center;
+        gap: 25px;
+        margin-bottom: 40px;
+        padding: 25px;
+        background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    }
+
+    .ht-content-header img {
+        width: 140px;
+        height: 140px;
+        object-fit: cover;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+        border: 3px solid white;
+        transition: transform 0.3s ease;
+    }
+
+    .ht-content-header img:hover {
+        transform: scale(1.03); /* Легкое увеличение при наведении */
+    }
+
+    .ht-content-header h1 {
+        margin: 0;
+        font-size: 1.8rem;
+        font-weight: 700;
+        color: #2c3e50;
+        line-height: 1.4;
+        text-align: left;
+    }
+
+    .ht-content-header h1 span {
+        background: linear-gradient(90deg, #3498db, #2ecc71);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+    }
+</style>
+
         <header class="ht-content-header">
+            <img src="media/article/dream.jpg"/>
             <h1 id="src-22467087365"> <span>Цифровая инклюзия: мои проекты для людей с речевыми и тяжелыми моторными нарушениями.</span></h1>
 
         </header>
